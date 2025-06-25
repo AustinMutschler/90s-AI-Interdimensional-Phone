@@ -4,7 +4,7 @@
 
 90s Interdimensional Phone is a backend that runs on a Raspberry Pi.
 
-This project brings AI characters to life through a retro 90s landline phone. You can read the full story here [90s Interdimensional Phone Story](https://median.com).
+This project brings AI characters to life through a retro 90s landline phone. You can read the full story here [90s Interdimensional Phone Story](https://medium.com/@austinmutschler/how-i-built-an-ai-powered-interdimensional-phone-fda78135172e).
 
 
 ### Hardware Requirements
