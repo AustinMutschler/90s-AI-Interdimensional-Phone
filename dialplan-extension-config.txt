@@ -1,0 +1,12 @@
+[ari-outbound]
+exten => _X.,1,NoOp(Outbound call to ARI)
+ same => n,Progress()
+ same => n,Playtones(ring)
+ same => n,Stasis(phone-app)
+
+[ari-outbound]
+exten => _X.,1,NoOp(Internal call to ${EXTEN}, SKIP_STASIS=${SKIP_STASIS})
+ same => n,GotoIf($["${SKIP_STASIS}" = "true"]?ring)
+ same => n,Stasis(phone-app)    ; only trunks or plain inbound hit here
+ same => n(ring),Dial(PJSIP/${EXTEN},20)
+ same => n,Hangup()

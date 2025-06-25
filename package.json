@@ -1,0 +1,43 @@
+{
+  "name": "90s-retro-phone",
+  "version": "1.0.0",
+  "description": "90s Retro Phone Raspberry Pi",
+  "main": "index.js",
+  "exports": "./build/index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start:dev": "cross-env NODE_ENV=development nodemon --watch './**/*.ts' --exec 'node -r dotenv/config --experimental-specifier-resolution=node --loader ts-node/esm' --inspect=0.0.0.0 src/index.ts",
+    "start:docker": "nodemon --watch './**/*.ts' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' --inspect=0.0.0.0 src/index.ts",
+    "build": "tsc",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest test --no-cache",
+    "test:debug": "node --inspect --experimental-vm-modules node_modules/.bin/jest",
+    "prettier:fix": "prettier --write ./src",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@ipcom/asterisk-ari": "^0.0.160",
+    "axios": "^1.9.0",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "onoff": "^6.0.3",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
+    "ws": "^8.18.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.0.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.7",
+    "husky": "^9.0.10",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.1",
+    "nodemon": "^3.0.3",
+    "prettier": "^3.2.4",
+    "ts-jest": "^29.3.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

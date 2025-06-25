@@ -1,0 +1,12 @@
+node_modules
+yarn-error.log
+
+dist
+
+# Does not commit environment variables
+.env
+
+# Mac Temp Files
+.DS_Store
+
+/data/partyphone.db
